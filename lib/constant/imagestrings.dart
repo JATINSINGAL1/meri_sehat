@@ -9,4 +9,9 @@ const String consulatationLogo = "Assets/img3.png";
 const String vital = "Assets/img1.png";
 const String newpatient ="Assets/newpatient.png";
 const String  patientlist = "Assets/patientlist.png";
+const String basicprofile="Assets/basic1.png";
+const String medicalhistory="Assets/medical1.png";
+const String report="Assets/report1.png";
+
+
 
