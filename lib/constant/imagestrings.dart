@@ -12,6 +12,7 @@ const String  patientlist = "Assets/patientlist.png";
 const String basicprofile="Assets/basic1.png";
 const String medicalhistory="Assets/medical1.png";
 const String report="Assets/report1.png";
+const String logo="Assets/horilogo.png";
 
 
 

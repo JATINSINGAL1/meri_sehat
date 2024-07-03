@@ -25,13 +25,30 @@ class UserDashBoard extends StatelessWidget {
           Container(
             height: 80,
             width: double.maxFinite,
-            color: Colors.red,
-            child: const Row(
-              children: [],
+            color: Colors.white,
+            child: ListView.builder(
+              
+              scrollDirection: Axis.horizontal,
+              shrinkWrap: true,
+              itemCount: 6,
+              itemBuilder: (context, index) {
+                const maxno= 5; 
+                return Padding(
+                  padding: EdgeInsets.all(4),
+                  child:index!=maxno? CircleAvatar(
+                    radius: 35,
+                    backgroundColor: Colors.blue,
+                    child: Text("$index"),
+                  ):CircleAvatar(
+            radius: 35,
+            child: Icon(Icons.add),
+                        ),
+                );
+              },
             ),
           ),
           // online consultation
-
+                
           //Patient Facility
           Container(
             margin: const EdgeInsets.all(8),

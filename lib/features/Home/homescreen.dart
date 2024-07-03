@@ -5,10 +5,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:meri_sehat/constant/imagestrings.dart';
 import 'package:meri_sehat/constant/list.dart';
+import 'package:meri_sehat/features/Home/Online%20Consultation/homecard.dart';
 import 'package:meri_sehat/features/Profile/Basic%20Profile/controller/profile_provider.dart';
 import 'package:meri_sehat/features/Profile/dashboard.dart';
 import 'package:meri_sehat/features/Vitals/checkvitalsform.dart';
-import 'package:meri_sehat/features/newpatient.dart';
+import 'package:meri_sehat/features/Home/Abha%20No/abhacard.dart';
+import 'package:meri_sehat/features/Home/newpatient.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -66,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                     color: Color.fromRGBO(223, 250, 230, 1),
                     child: Container(
                       padding: const EdgeInsets.all(16),
-                      child:  Row(
+                      child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Column(
@@ -77,7 +79,9 @@ class HomeScreen extends StatelessWidget {
                                 style: TextStyle(fontSize: 20),
                               ),
                               Text(
-                               controller.firstName.text.isNotEmpty? controller.firstName.text.toString():"UserName",
+                                controller.firstName.text.isNotEmpty
+                                    ? controller.firstName.text.toString()
+                                    : "UserName",
                                 style: TextStyle(fontSize: 24),
                               ),
                               Text(
@@ -101,6 +105,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
               ),
+              AbhaCard(),
               Card(
                   child: Container(
                 padding: EdgeInsets.all(8),
@@ -114,20 +119,7 @@ class HomeScreen extends StatelessWidget {
                   },
                 ),
               )),
-              Card(
-                color: Color.fromRGBO(223, 233, 255, 1),
-                child: Stack(
-                  children: [
-                    Image.asset(
-                      consulatationLogo,
-                      width: double.infinity,
-                      height: 170,
-                    ),
-                    Positioned(top: 10, child: Text("Online Consulation")),
-                    Positioned(bottom: 10, child: Text("Click Here>")),
-                  ],
-                ),
-              ),
+              OnlineConsultationCard(),
               Card(
                 color: Color.fromRGBO(240, 251, 223, 1),
                 child: Padding(

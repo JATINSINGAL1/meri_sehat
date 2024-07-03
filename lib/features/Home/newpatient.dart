@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constant/imagestrings.dart';
+import '../../constant/imagestrings.dart';
 
 class NewPatient extends StatefulWidget {
   const NewPatient({super.key});

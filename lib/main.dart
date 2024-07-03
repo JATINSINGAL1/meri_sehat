@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:meri_sehat/features/Authentication/signup.dart';
+import 'package:meri_sehat/features/Home/Online%20Consultation/screen.dart';
 import 'package:meri_sehat/features/Profile/Basic%20Profile/controller/profile_provider.dart';
 import 'package:meri_sehat/features/Profile/Medical%20History/medicalhistory.dart';
 import 'package:meri_sehat/features/Profile/dashboard.dart';
 import 'package:meri_sehat/features/Profile/Basic%20Profile/patientprofile.dart';
 import 'package:meri_sehat/features/Vitals/checkvitalsform.dart';
-import 'package:meri_sehat/features/homescreen.dart';
+import 'package:meri_sehat/features/Home/homescreen.dart';
 import 'package:meri_sehat/features/Authentication/onboardingscreen.dart';
 import 'package:meri_sehat/utils/theme/theme.dart';
 import 'package:provider/provider.dart';
@@ -27,7 +29,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: EAppTheme.lighttheme,
-        home: const HomeScreen(),
+        home: const SignUpPage(),
       ),
     );
   }

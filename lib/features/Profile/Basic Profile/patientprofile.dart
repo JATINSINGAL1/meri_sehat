@@ -1,7 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:meri_sehat/features/Profile/Basic%20Profile/controller/profile_provider.dart';
 import 'package:provider/provider.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class PatientProfile extends StatelessWidget {
   const PatientProfile({super.key});
@@ -19,10 +21,20 @@ class PatientProfile extends StatelessWidget {
         ),
       ),
       body: Consumer<ProfileProvider>(
-        builder: (context, controller, child) =>
-            PageView(controller: controller.pageController, children: const [
-          PersonalInfo(),
-          Address(),
+        builder: (context, controller, child) => Stack(children: [
+          PageView(controller: controller.pageController, children: const [
+            PersonalInfo(),
+            Address(),
+          ]),
+          Positioned(
+            top: 10,
+            right: MediaQuery.sizeOf(context).width / 2 - 5,
+            child: SmoothPageIndicator(
+              controller: controller.pageController, // PageController
+              count: 2,
+              effect: ExpandingDotsEffect(),
+            ),
+          ),
         ]),
       ),
     );
@@ -42,6 +54,36 @@ class PersonalInfo extends StatelessWidget {
         child: Column(
           children: [
             /// image of user
+
+            Container(
+              padding: const EdgeInsets.all(10),
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(10))),
+              child: const Stack(
+                children: [
+                  CircleAvatar(
+                    radius: 50,
+                    backgroundColor: Colors.red,
+                  ),
+                  Positioned(
+                    bottom: 2,
+                    right: 5,
+                    child: CircleAvatar(
+                      radius: 15,
+                      child: Icon(
+                        Icons.edit,
+                        size: 20,
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+
             TextFormField(
               controller: contoller.firstName,
               decoration: const InputDecoration(labelText: "First Name"),
@@ -66,28 +108,25 @@ class PersonalInfo extends StatelessWidget {
               children: [
                 Expanded(
                     child: TextFormField(
-                      controller: contoller.dateTime,
-                      readOnly: true,
+                  controller: contoller.dateTime,
+                  readOnly: true,
                   onTap: () {
                     DateTime daytime;
                     // contoller.setDate();
-                     
-                      
-                       DatePickerDialog(
-                          
-                          restorationId: 'date_picker_dialog',
-                          initialEntryMode: DatePickerEntryMode.calendarOnly,
-                          // initialDate: daytime,
-                          firstDate: DateTime(2020),
-                          lastDate: DateTime(2022),
-                        );
 
-                     
-                    
+                    DatePickerDialog(
+                      restorationId: 'date_picker_dialog',
+                      initialEntryMode: DatePickerEntryMode.calendarOnly,
+                      // initialDate: daytime,
+                      firstDate: DateTime(2020),
+                      lastDate: DateTime(2022),
+                    );
+
                     // print(daytime.toString());
                   },
-                  decoration:
-                      const InputDecoration(labelText: "DOB (DD/MM/YYYY)",suffixIcon: Icon(Icons.calendar_month_rounded)),
+                  decoration: const InputDecoration(
+                      labelText: "DOB (DD/MM/YYYY)",
+                      suffixIcon: Icon(Icons.calendar_month_rounded)),
                 )),
                 const SizedBox(
                   width: 10,
@@ -134,7 +173,6 @@ class PersonalInfo extends StatelessWidget {
             const SizedBox(
               height: 10,
             ),
-            
 
             ElevatedButton(
                 onPressed: () {

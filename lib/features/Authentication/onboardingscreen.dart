@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:meri_sehat/features/homescreen.dart';
+import 'package:meri_sehat/features/Home/homescreen.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -18,11 +18,7 @@ class OnBoardingScreen extends StatelessWidget {
               width: 120,
               child: ElevatedButton(
                   onPressed: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const HomeScreen(),
-                        ));
+                    
                   },
                   child: Text("NEXT")),
             )
