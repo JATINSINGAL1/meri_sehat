@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:meri_sehat/features/Profile/Medical%20History/Tabbar%20Screens/familyhistory.dart';
 import 'package:meri_sehat/features/Profile/Medical%20History/Tabbar%20Screens/personalhistory.dart';
 
 class MedicalHistory extends StatelessWidget {
@@ -10,6 +11,7 @@ class MedicalHistory extends StatelessWidget {
       length: 4,
       child: Scaffold(
         appBar: AppBar(
+          leading: IconButton(onPressed: (){Navigator.of(context).pop();}, icon: const Icon(Icons.arrow_back_ios)),
           title: const Text("Medical History"),
         ),
         body: Column(
@@ -31,11 +33,9 @@ class MedicalHistory extends StatelessWidget {
                   color: Colors.green,
                 ),
                 // Personal History
-                PersonalHistory(),
+                const PersonalHistory(),
                 // Family History
-                Container(
-                  color: Colors.yellow,
-                ),
+                const FamilyHistory(),
               ]),
             )
           ],

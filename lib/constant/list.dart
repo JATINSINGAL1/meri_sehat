@@ -8,3 +8,15 @@ List app = [
   lab,
   pharmacy,
 ];
+
+
+List medicalProblem=[
+  "Medical Treatment",
+  "Diabetes",
+  "Mental Disorders",
+  "Hypertension",
+  "Thyroid",
+  "Stroke",
+  "Cardiovascular"
+
+];

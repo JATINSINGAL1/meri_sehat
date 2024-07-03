@@ -23,7 +23,71 @@ class PersonalHistory extends StatelessWidget {
             ),
           ),
           // Questions and there options
-          Container(child: Column(children: [Text("1. What is your age?")],),)
+          Container(
+            width: double.maxFinite,
+            color: Colors.white,
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("1. What is your age? (incomplete years)"),
+                // RadioListTile(value: 1, groupValue: groupValue, onChanged: onChanged)
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 2,
+          ),
+          Container(
+            width: double.maxFinite,
+            color: Colors.white,
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                    "2. Do you smoke or consume smokeless products such as gutka or khaini?"),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 2,
+          ),
+          Container(
+            width: double.maxFinite,
+            color: Colors.white,
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("3. Do you consume alcohol daily?"),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 2,
+          ),
+          Container(
+            width: double.maxFinite,
+            color: Colors.white,
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text("4. Measurement of waist (in cm)"),
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 2,
+          ),
+          Container(
+            width: double.maxFinite,
+            color: Colors.white,
+            child: const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                    "5. Do you undertake any physical activites for minimum of 150 minutes in a week?"),
+              ],
+            ),
+          ),
         ],
       ),
     );

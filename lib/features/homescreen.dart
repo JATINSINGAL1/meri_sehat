@@ -5,8 +5,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:meri_sehat/constant/imagestrings.dart';
 import 'package:meri_sehat/constant/list.dart';
+import 'package:meri_sehat/features/Profile/Basic%20Profile/controller/profile_provider.dart';
+import 'package:meri_sehat/features/Profile/dashboard.dart';
 import 'package:meri_sehat/features/Vitals/checkvitalsform.dart';
 import 'package:meri_sehat/features/newpatient.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,51 +19,85 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         leading: null,
-        backgroundColor: Colors.blue[600],
         title: const Text(
           "Meri Sehat",
           style: TextStyle(color: Colors.white),
         ),
+        actions: [
+          MenuAnchor(
+              builder: (context, controller, child) {
+                return IconButton(
+                  onPressed: () {
+                    if (controller.isOpen) {
+                      controller.close();
+                    } else {
+                      controller.open();
+                    }
+                  },
+                  icon: const Icon(Icons.more_vert),
+                  tooltip: 'Show menu',
+                );
+              },
+              menuChildren: [
+                MenuItemButton(child: Text("abc")),
+                MenuItemButton(child: Text("abc")),
+                MenuItemButton(child: Text("abc")),
+              ]),
+          SizedBox(
+            width: 10,
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8),
         child: SingleChildScrollView(
           child: Column(
             children: [
-              Card(
-                color: Color.fromRGBO(223, 250, 230, 1),
-                child: Container(
-                  padding: const EdgeInsets.all(16),
-                  child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+              Consumer<ProfileProvider>(
+                builder: (context, controller, child) => GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, PageRouteBuilder(
+                      pageBuilder: (context, animation, secondaryAnimation) {
+                        return const UserDashBoard();
+                      },
+                    ));
+                  },
+                  child: Card(
+                    color: Color.fromRGBO(223, 250, 230, 1),
+                    child: Container(
+                      padding: const EdgeInsets.all(16),
+                      child:  Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "Welcome",
-                            style: TextStyle(fontSize: 20),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Welcome",
+                                style: TextStyle(fontSize: 20),
+                              ),
+                              Text(
+                               controller.firstName.text.isNotEmpty? controller.firstName.text.toString():"UserName",
+                                style: TextStyle(fontSize: 24),
+                              ),
+                              Text(
+                                "9755777945",
+                                style: TextStyle(fontSize: 18),
+                              ),
+                            ],
                           ),
-                          Text(
-                            "Deepak Patidar",
-                            style: TextStyle(fontSize: 24),
-                          ),
-                          Text(
-                            "9755777945",
-                            style: TextStyle(fontSize: 18),
-                          ),
+                          Expanded(
+                            child: CircleAvatar(
+                              radius: 64,
+                              child: Icon(
+                                Icons.man_4,
+                                size: 64,
+                              ),
+                            ),
+                          )
                         ],
                       ),
-                      Expanded(
-                        child: CircleAvatar(
-                          radius: 64,
-                          child: Icon(
-                            Icons.man_4,
-                            size: 64,
-                          ),
-                        ),
-                      )
-                    ],
+                    ),
                   ),
                 ),
               ),

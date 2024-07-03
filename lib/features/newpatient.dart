@@ -23,7 +23,7 @@ class _NewPatientState extends State<NewPatient> {
        setState(() {
         _visible=true;
       });
-      await Future.delayed(Duration(seconds: 1));
+      await Future.delayed(Duration(milliseconds: 200));
     }
     return Expanded(
       child: GestureDetector(
@@ -83,7 +83,7 @@ class _NewPatientState extends State<NewPatient> {
           child: Expanded(
               child: AnimatedOpacity(
                 opacity: _visible ? 1.0 : 0.0,
-                duration: Duration(milliseconds: 500),
+                duration: Duration(milliseconds: 400),
                 child: Container(
                     margin: const EdgeInsets.all(5),
                     padding: const EdgeInsets.all(5),
