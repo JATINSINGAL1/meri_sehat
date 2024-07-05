@@ -4,6 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:meri_sehat/features/Home/Online%20Consultation/cards/card1.dart';
 import 'package:meri_sehat/features/Home/Online%20Consultation/cards/card2.dart';
 import 'package:meri_sehat/features/Home/Online%20Consultation/cards/card3.dart';
+import 'package:meri_sehat/features/Home/Online%20Consultation/cards/card4.dart';
 import 'package:meri_sehat/features/Home/Online%20Consultation/cards/card5.dart';
 
 class OnlineConsultation extends StatelessWidget {
@@ -86,6 +87,7 @@ class OnlineConsultation extends StatelessWidget {
               const CurrentHealthRecord(),  
               const ActiveMedication(),
               const ClinicalExamination(),
+              const Query(),
               const Doctor(),
 
             ],

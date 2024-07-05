@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meri_sehat/features/Authentication/signup.dart';
 import 'package:meri_sehat/features/Home/Online%20Consultation/screen.dart';
 import 'package:meri_sehat/features/Profile/Basic%20Profile/controller/profile_provider.dart';
+import 'package:meri_sehat/features/Profile/Medical%20History/controller/medicalhistory_provider.dart';
 import 'package:meri_sehat/features/Profile/Medical%20History/medicalhistory.dart';
 import 'package:meri_sehat/features/Profile/dashboard.dart';
 import 'package:meri_sehat/features/Profile/Basic%20Profile/patientprofile.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => ProfileProvider()),
+        ChangeNotifierProvider(create: (context) => MedicalHistoryProvider()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

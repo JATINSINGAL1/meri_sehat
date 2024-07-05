@@ -11,24 +11,26 @@ class CheckVital extends StatelessWidget {
         backgroundColor: Colors.blue[600],
         title: const Text("Check Vitals"),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8),
-        child: Form(
-
-            child: Column(
-          children: [
-            TextFormField(keyboardType: TextInputType.number,decoration: const InputDecoration(labelText: "Heart Rate"),),
-            TextFormField(decoration: const InputDecoration(labelText: "Heart Rate Variability"),),
-            TextFormField(decoration: const InputDecoration(labelText: "Stress"),),
-            TextFormField(decoration: const InputDecoration(labelText: "Respiratory Level"),),
-            TextFormField(decoration: const InputDecoration(labelText: "O2 Level"),),
-            TextFormField(decoration: const InputDecoration(labelText: "Temperature"),),
-            TextFormField(decoration: const InputDecoration(labelText: "Blood Glucose"),),
-            TextFormField(decoration: const InputDecoration(labelText: "Stethescope"),),
-            TextFormField(decoration: const InputDecoration(labelText: "ECG"),),
-            ElevatedButton(onPressed: (){}, child: Text(""))
-          ],
-        )),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(8),
+          child: Form(
+        
+              child: Column(
+            children: [
+              TextFormField(keyboardType: TextInputType.number,decoration: const InputDecoration(labelText: "Heart Rate"),),
+              TextFormField(decoration: const InputDecoration(labelText: "Heart Rate Variability"),),
+              TextFormField(decoration: const InputDecoration(labelText: "Stress"),),
+              TextFormField(decoration: const InputDecoration(labelText: "Respiratory Level"),),
+              TextFormField(decoration: const InputDecoration(labelText: "O2 Level"),),
+              TextFormField(decoration: const InputDecoration(labelText: "Temperature"),),
+              TextFormField(decoration: const InputDecoration(labelText: "Blood Glucose"),),
+              TextFormField(decoration: const InputDecoration(labelText: "Stethescope"),),
+              TextFormField(decoration: const InputDecoration(labelText: "ECG"),),
+              ElevatedButton(onPressed: (){}, child: Text(""))
+            ],
+          )),
+        ),
       ),
     );
   }

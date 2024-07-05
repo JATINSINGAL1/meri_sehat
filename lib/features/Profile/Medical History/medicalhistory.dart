@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:meri_sehat/features/Profile/Medical%20History/Tabbar%20Screens/familyhistory.dart';
 import 'package:meri_sehat/features/Profile/Medical%20History/Tabbar%20Screens/personalhistory.dart';
+import 'package:meri_sehat/features/Profile/Medical%20History/Tabbar%20Screens/previousmedical.dart';
 
 class MedicalHistory extends StatelessWidget {
   const MedicalHistory({super.key});
@@ -25,9 +26,7 @@ class MedicalHistory extends StatelessWidget {
             Expanded(
               child: TabBarView(children: [
                 // Previous Medical 
-                Container(
-                  color: Colors.red,
-                ),
+                const PreviousMedical(),
                 // Medical History
                 Container(
                   color: Colors.green,

@@ -22,9 +22,13 @@ class ActiveMedication extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    const Padding(
+                     Padding(
                       padding: EdgeInsets.all(8.0),
-                      child: Icon(Icons.close),
+                      child: IconButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              icon: const Icon(Icons.close)),
                     ),
                     Form(
                       child: Column(

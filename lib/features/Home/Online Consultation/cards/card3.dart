@@ -17,16 +17,20 @@ class ClinicalExamination extends StatelessWidget {
                   borderRadius: BorderRadius.only(
                       topRight: Radius.circular(5),
                       topLeft: Radius.circular(5))),
-              child: const Padding(
-                padding: EdgeInsets.all(8.0),
+              child:  Padding(
+                padding: const EdgeInsets.all(8.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
                     Padding(
-                      padding: EdgeInsets.all(8.0),
-                      child: Icon(Icons.close),
+                      padding: const EdgeInsets.all(8.0),
+                      child: IconButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              icon: const Icon(Icons.close)),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.symmetric(horizontal: 10),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
